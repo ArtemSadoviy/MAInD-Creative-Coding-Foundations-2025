@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Endangered Species</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <header>
+        <h1>Endangered Animals</h1>
+       
+        <div id="input-color-and-add-container">
+            <input type="text" id="animal-input" placeholder="Add an animal...">
+            <div id="color-and-button">
+                <div id="label-and-color-input">
+                    <h3>Choose a </br> color</h3>
+                    <input type="color" id="color-input">
+                </div>
+                <button id="add-btn">Add</button>
+            </div>
+        </div>
+
+        <div id="list-and-card-views-container">
+            <button id="list-view-btn" class="btn-container">List view</button>
+            <button id="card-view-btn" class="btn-container">Card view</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="list-bg-color-control">
+            <input type="color" id="list-bg-picker" hidden>
+            <label for="list-bg-picker" id="list-bg-button" title="Change list background">🎨</label>
+        </div>
+        
+        <ul id="animal-list-container" class="list-view">
+            <div class="li-and-delete-button">
+                <li>Saola</li>
+                <button class="delete-btn">X</button>
+                <input type="color" class="color-picker" hidden>
+                <button id="colorButton" class="color-btn">&#127912;</button>
+            </div>
+
+            <div class="li-and-delete-button">
+                <li>Sloths</li>
+                <button class="delete-btn">X</button>
+                <input type="color" class="color-picker" hidden>
+                <button id="colorButton" class="color-btn">&#127912;</button>
+              </div>
+          
+              <div class="li-and-delete-button">
+                <li>Narwhals</li>
+                <button class="delete-btn">X</button>
+                <input type="color" class="color-picker" hidden>
+                <button id="colorButton" class="color-btn">&#127912;</button>
+              </div> 
+        </ul>
+    </main>
+    
+    <footer> <img src="assets/Images/environmental-stewardship.png" alt="a man is holding Earth in his hands"></footer>
+</body>
+
+</html>
