@@ -110,7 +110,6 @@ button{
     border-radius: 1.5rem;
 }
 
-
 #add-btn{
     height: 3.75rem;
     width: 50%;
@@ -121,8 +120,6 @@ button{
     display: flex;
     justify-content: center;
 }
-
-
 
 #list-and-card-views-container{
     margin: 0 auto;
@@ -173,7 +170,7 @@ ul {
     flex-wrap: wrap;
     gap: 1rem;
     width:90%; 
-}
+ }
 
 .card-view li {
     display: block;
