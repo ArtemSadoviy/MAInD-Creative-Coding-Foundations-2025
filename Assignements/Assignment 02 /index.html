@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaceship</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer></script>
+</head>
+<body>
+<!--Quando la pagina viene caricata posso scegliere tra 4 avatar--> 
+    <div id="avatar-select">
+        <div id="buttons_and_spaceships">
+
+            <p>Choose Your Spaceship:</p>
+
+            <div class="buttons">
+                <section class="skins">
+                    <button class="avatars" id="avatar_1">1</button>
+                    <img id="icon_1" src="assets/images/icon 1 .svg" alt="spaceship1">
+                </section>
+
+                <section class="skins">
+                    <button  class="avatars" id="avatar_2">2</button>
+                    <img id="icon_2" src="assets/images/icon 2.svg" alt="spaceship2">
+                </section>
+
+                <section class="skins" >
+                    <button class="avatars" id="avatar_3">3</button>
+                    <img id="icon_3" src="assets/images/icon 3.svg" alt="spaceship3">
+                </section>
+
+                <section class="skins">
+                    <button class="avatars" id="avatar_4">4</button>
+                    <img id="icon_4" src="assets/images/icon 4.svg" alt="spaceship4">
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!--La mia navicella spaziale -->
+    <div id="Spaceship" class="avatar_1"></div>
+
+    <!-- Le vite che ho, sottoforma di cuore e i punti-->
+    <div class="scores-and-lifes">
+
+        <div id ="lifes">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div id="score">
+            <span>0</span>
+        </div>
+
+    </div>
+     
+    <!-- I comandi per muovere la navicella, compaiono solo nella versione mobile e tablet,
+    perchè nella versione computer si potrà navigare con freccia destra e sinistra e si userà space per sparare -->
+   <div id="navigation">
+        <button id="move-to-left"></button>
+        <button id="shoot-on-click"></button>
+        <button id="move-to-right"></button>
+   </div>
+   
+   <!--L'audio pensato per essere riprodotto quando la navicella spaziale spara per colpire gli asteroidi-->
+   <audio id="laser-shoot" src="assets/Sounds/Laser sound final .mp3"></audio>
+
+</body>
+</html>
+ 
