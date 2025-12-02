@@ -1,0 +1,593 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: "basset-eight", sans-serif;
+}
+
+@import url("https://use.typekit.net/fin6cdt.css");
+@import url("https://use.typekit.net/qsx3hza.css");
+
+
+ h1 {
+    font-family: "quokka", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+ }
+
+body{
+    background-size: cover;
+    position: relative;
+    min-height: 100vh; /* senza questo min-height,sullo schermo vedo il pezzo sotto come bianco,ho scoperto che devo specificare che il mio elemento deve essere alto quanto lo è lo schermo */
+}
+
+#menu{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden;
+    position: relative; 
+    color:white; 
+}
+
+#menu-video{
+    position:fixed; 
+    top:0px; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; 
+}
+#title-menu{
+    font-size: 35px;
+}
+
+.menu-and-title{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.section{
+    display: none;
+}
+
+#Spaceship{
+    height: 160px;  /* l'altezza della mia navicella spaziale*/
+    position: absolute; /* voglio piazzare la mia navicella relativamente al contenitore quindi devo usare absolute position */
+    left:60px;
+    bottom:250px; 
+    transition: 0.1s;
+    z-index: 0; 
+
+}
+/* Le 4  navicelle spaziali tra cui posso scegliere */
+
+#Spaceship.avatar_1{
+    width: 168px;
+    background: url(images/spaceship1.svg)
+}
+
+#Spaceship.avatar_2{
+    width: 160px;
+    background: url(images/spaceship2svg.svg)
+}
+
+#Spaceship.avatar_3{
+    width: 150px;
+    background: url(images/spaceship3.svg)
+}
+
+#Spaceship.avatar_4{
+    width: 168px;
+    background: url(images/spaceship4.svg)
+}
+
+/*Voglio che i miei punti e le mie vite siano situate in alto a destra rispetto allo schermo*/
+.scores-and-lifes{ 
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-right: 20px;
+    z-index: 5;
+    position:relative; 
+}
+
+/*Asteroide*/
+.asteroid{
+    position:absolute; 
+    left:20px; 
+    width: 50px; 
+    height:50px; 
+    background: url("images/asteroid-final-unscreen.gif") no-repeat center center;
+    background-size: contain;
+    z-index: 3;
+}
+
+/*Proiettile*/
+.bullet {
+    width: 5px;
+    height:15px; 
+    background: rgb(207, 171, 251);
+    position:absolute; 
+    border-radius: 3px; 
+    z-index: 1; 
+    transition: 0.05s; 
+    box-shadow:0 0 5px #fff, 0 0 8px #fff, 0 0 12px #fff, 0 0 15px red, 0 0 25px ; 
+}
+/*Esplosione*/
+.explosion{
+    background: url(images/Explode\ Nuclear\ Bomb\ Sticker\ by\ Relo\ GIFS.gif) no-repeat center center;
+    background-size: contain;
+    position:absolute; 
+    top:40%; 
+    left: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+/*Vite*/
+#lifes{
+    display: flex;
+    align-items: center;
+    
+}
+#lifes span { 
+    display: block;
+    margin: 10px;
+    width: 40px;
+    height: 40px; 
+    background: url(images/hearts.svg);
+    background-size: cover;
+    scale: 0.8; /*Per ogni media query uso un scale diverso*/
+}
+
+#avatar-select{ 
+   display: flex;
+   flex-direction: column;
+   color: white; 
+   align-items: center;
+   justify-content: center;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); 
+   width:100%; 
+   background-color: #0D0E24;
+   font-weight: 900;
+   font-size: 40px;
+   gap: 20px;
+   height: 100vh;
+   z-index: 6;
+   
+}
+
+.avatars{
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "bc-civitas", sans-serif;
+    color: white;
+    background-color: #545D97;
+}
+
+#choose-spaceship{
+    font-family: "bc-civitas", sans-serif;
+}
+
+section{
+    width: 100%;
+    gap: 20px; 
+}
+
+button{ 
+    width: auto;       
+    height: auto;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px;
+    background-color: white;
+    color: #0D0E24;
+    font-family: "bc-civitas", sans-serif;
+}
+
+#restart-game{
+    height: 20%;
+    width: 60%;
+}
+
+#score{
+    color:white;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.skins{
+    width: 100%;
+    height: 20%;
+    gap: 50px;
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.skins img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain; /* icone proporzionate*/ 
+}
+
+#buttons_and_spaceships{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#avatar-select p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/*Questa parte riguarda i pulsanti per comandare la navicella in mobile e tablet query*/
+#navigation 
+{
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    z-index: 5;
+}
+
+#move-to-left{
+    background-image: url(images/left-arrow-svgrepo-com\ copy.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#shoot-on-click{
+    background-image: url(images/circle-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#move-to-right{
+    background-image: url(images/right-arrow-svgrepo-com.svg) ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#navigation {
+    position: absolute;
+    bottom: 100px;             
+    left: 50%;
+    transform: translateX(-50%); 
+    display: flex;
+    gap: 50px;
+    width: 80%;
+}
+
+#navigation button {
+    width: 60px;
+    height: 60px;
+    background-color: #545D97;
+}
+
+#restart-game{
+    position:absolute; 
+    top:50%; 
+    left:50%; 
+    transform: translate(-50%, -50%); 
+    font-weight: 800;
+    height: 10%;
+    width: 50%;
+}
+
+#nasa-section{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-top: 5%;
+    z-index: 5;
+    position: relative; 
+    font-family: "bc-civitas", sans-serif;
+
+}
+#number-of-storms{
+    font-family: "bc-civitas", sans-serif;
+}
+#speed{
+    font-family: "bc-civitas", sans-serif;
+}
+#score{
+    font-family: "bc-civitas", sans-serif;
+    
+}
+
+h2{
+    font-family: "bc-civitas", sans-serif;
+}
+
+p{
+    font-family: "bc-civitas", sans-serif; 
+
+}
+ #game-background-mobile, #video-background-computer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    display: flex;
+    position:fixed;
+    top: 0px; 
+}
+
+#how-to-play-section, 
+#credits-section {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0D0E24;
+}
+
+#how-to-play-section{
+    background-color: #0D0E24;
+    display: flex;
+    justify-content: center;
+}
+
+.contenitore-how-to-play{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+}
+
+#button-play,
+#button-how-to-play,
+#button-credits {
+	font-family: "bc-civitas", sans-serif;
+    font-weight: 700;
+    color: #0D0E24;
+    background-color: white;
+}
+
+#video-background-computer{
+    display: none;
+}
+
+#menu-button {
+    position:absolute; 
+    top:35%; 
+    left:50%; 
+    transform: translate(-50%, -50%);
+    font-weight: 800;
+    height: 10%;
+    width: 50%;
+
+}
+
+#menu-spaceship{
+    width: 50%;
+}
+
+#how-to-play-title{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+#credits-title{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+h2{
+    font-size: 18px;
+    font-weight: 900;
+}
+#back-menu-from-credits{
+    margin: 20px;
+}
+#back-menu-from-how-to-play{
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    #navigation {
+        position: absolute;
+        bottom: 50px;             
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 80px;
+        width: 100%;
+    }
+    
+    #navigation button {
+        width: 100px;
+        height: 100px;
+        background-color:  #545D97;
+    }
+
+    #avatar-select p {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .skins img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .avatars{
+        width: 100px;
+        height: 100px;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #Spaceship{
+        height: 160px;  /* l'altezza della mia navicella spaziale*/
+        position: absolute; /* voglio piazzare la mia navicella relativamente al contenitore quindi devo usare absolute position */
+        left:60px;
+        bottom:250px; 
+        transition: 0.2s;
+        z-index: 1;
+        scale:1.5; 
+    
+    }
+    .bullet {
+        width: 8px;
+        height:20px; 
+        background: rgb(207, 171, 251);
+        position:absolute; 
+    
+        border-radius: 3px; 
+        box-shadow:0 0 5px #fff, 0 0 8px #fff, 0 0 12px #fff, 0 0 15px red, 0 0 25px ; 
+        z-index: 5; 
+        transition: 0.05s; 
+    }
+
+    .menu-and-title{
+        width: 40%;
+        display: flex;
+        justify-content: center;
+    }
+    #title-menu{
+        text-align: center;
+        font-size: 75px;
+    }
+
+    .asteroid{
+        position:absolute; 
+        left:20px; 
+        width: 75px; 
+        height:75px; 
+        background: url("images/asteroid-final-unscreen.gif") no-repeat center center;
+        background-size: contain;
+    }
+}
+
+@media (min-width: 1010px) {
+
+    .menu-and-title{
+        width: 40%;
+        display: flex;
+        justify-content: center;
+    }
+    #title-menu{
+        text-align: center;
+        font-size: 100px;
+    }
+
+    #video-background-computer{
+        display: block;
+    }
+    #game-background-mobile{
+        display: none;
+    }
+
+    #Spaceship{
+        height: 160px;  
+        position: absolute;
+        left:60px;
+        bottom:150px; 
+        transition: 0.01s;
+        z-index: 1;
+        scale:1.5; 
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        width: 55%; 
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    
+    #buttons_and_spaceships{
+        width:90%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:20%; 
+    }
+
+    .asteroid{
+        position:absolute; 
+        left:20px; 
+        width: 100px; 
+        height:100px; 
+        background: url("images/asteroid-final-unscreen.gif") no-repeat center center;
+        background-size: contain;
+    }
+    
+    /* La navigation bar non si deve vedere nella versione per il computer*/
+    #navigation {
+        display: none;
+    }
+
+    .bullet {
+        width: 10px;
+        height: 25px;
+        background: rgb(207, 171, 251);
+        position:absolute; 
+        border-radius: 3px; 
+        z-index: 5; 
+        transition: 0.05s; 
+    }
+
+    .skins {
+        width: 45%; 
+    }
+
+    #nasa-section{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        font-size: 20px;
+        margin-right: 20px;
+        margin-top: 5%;
+        z-index: 5;
+        position: relative; 
+    }
+}

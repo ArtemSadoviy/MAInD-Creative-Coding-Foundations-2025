@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Spacing Shmup</title>
+    <link rel="stylesheet" href="https://use.typekit.net/fin6cdt.css"> <!--font da Adobe-->
+    <link rel="stylesheet" href="https://use.typekit.net/qsx3hza.css"> <!--font da Adobe-->
+    <link rel="stylesheet" href="assets/style.css"> 
+    <script src="assets/script.js" defer></script>
+</head>
+
+<body>
+
+    <!--Menu che appare quando la pagina viene caricata -->
+    <div id="menu" class="screen1"> <!---->
+        <video id="menu-video" autoplay loop muted  src="assets/images/background for menu .mp4"></video> <!--video di background fatto in After Effects -->
+        <div class="menu-and-title">
+            <h1 id="title-menu">Spaceship Shmup</h1>
+            <button id="button-play">Play</button> <!--Per scegliere la navicella spaziale e iniziare a giocare-->
+            <button id="button-how-to-play">How to play</button> <!--Spiegazione di come giocare-->
+            <button id="button-credits">Credits</button> <!--Risorse esterne come audio e immagini che ho usato per creare il gioco-->
+        </div>
+    </div>
+
+<div id="game-screen" class="section">
+<!--Quando la pagina viene caricata posso scegliere tra 4 avatar--> 
+    <div id="avatar-select">
+
+        <div id="buttons_and_spaceships">
+
+            <p id="choose-spaceship">Choose Your Spaceship:</p>
+
+            <div class="buttons"> <!--Avatar1 -->
+                <section class="skins"> 
+                    <button class="avatars" id="avatar_1">1</button>
+                    <img id="icon_1" src="assets/images/icon 1 .svg" alt="spaceship1">
+                </section>
+
+                <section class="skins"> <!--Avatar2-->
+                    <button  class="avatars" id="avatar_2">2</button>
+                    <img id="icon_2" src="assets/images/icon 2.svg" alt="spaceship2">
+                </section>
+
+                <section class="skins" > <!--Avatar3-->
+                    <button class="avatars" id="avatar_3">3</button>
+                    <img id="icon_3" src="assets/images/icon 3.svg" alt="spaceship3">
+                </section>
+
+                <section class="skins"> <!--Avatar4 -->
+                    <button class="avatars" id="avatar_4">4</button>
+                    <img id="icon_4" src="assets/images/icon 4.svg" alt="spaceship4">
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- La navicella spaziale-->
+    <div id="Spaceship" class="avatar_1"></div>
+
+    <!--Sezione dedicata all'API -->
+    <div id="nasa-section">
+        <p id="number-of-storms"></p>
+        <p id="speed"></p>
+    </div>
+
+    <!-- Le vite che ho, sottoforma di cuore, e i punti-->
+    <div class="scores-and-lifes">
+        <!--Vite -->
+        <div id ="lifes">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!--Punti-->
+        <div id="score">
+            <span>0</span>
+        </div>
+    </div>
+     
+    <!-- I comandi per muovere la navicella, compaiono solo nella versione mobile e tablet,
+    perchè nella versione computer si potrà navigare con freccia destra e sinistra e si userà space per sparare -->
+   <div id="navigation">
+        <button id="move-to-left"></button>
+        <button id="shoot-on-click"></button>
+        <button id="move-to-right"></button>
+   </div>
+   
+   <!--L'audio pensato per essere riprodotto quando la navicella spaziale spara per colpire gli asteroidi-->
+   <audio id="laser-shoot" src="assets/Sounds/Laser sound final .mp3"></audio>
+
+   <!--Video background per il gioco per la versione mobile e tablet-->
+   <video id="game-background-mobile" autoplay loop muted  src="assets/images/backgorund-with-stars-moving_5APhts4j.mov"></video>
+
+   <!--Video bacground per la versione computer -->
+   <video id="video-background-computer" autoplay loop muted src="assets/images/backgorund for computer.mp4"></video>
+   
+   <!--Backgroud music per la partita -->
+   <audio id="background-music" src="assets/sounds/byte-blast-8-bit-arcade-music-background-music-for-video-208780.mp3"></audio>
+
+   <!--Il suono viene riprodotto quando la navicella spaziale colpisce un asteroide e di conseguenza guadagna un punto-->
+   <audio id="reward-music" src="assets/sounds/game-bonus-02-294436.mp3"></audio>
+
+   <!--L'audio che viene riprodotto quando l'asteroide colpisce la navicella spaziale-->
+   <audio id="collision-sound" src="assets/sounds/car-crash-211710 (1).mp3"></audio>
+</div>
+
+
+<!--Sezione How to Play del menu -->
+
+<div id="how-to-play-section" class="section">
+    <h1 id="how-to-play-title">How to play</h1>
+    <div class="contenitore-how-to-play">
+        <h2>1.Select your spaceship</h2>
+    </div>
+    <div  class="contenitore-how-to-play">
+        <h2>2A. Tablet and Mobile Navigation</h2>
+        <p>Use the navigation buttons to move left and right.</p>
+    </div>
+    <div  class="contenitore-how-to-play">
+        <h2>2B. Computer Navigation</h2>
+        <p>Use the left and right arrow keys to move.</p>
+    </div>
+    <div  class="contenitore-how-to-play">
+        <h2>3A. Mobile and Tablet Shoot</h2>
+        <p>Tap the circle button to shoot.</p>
+    </div>
+    <div  class="contenitore-how-to-play">
+        <h2>3B. Computer Shoot</h2>
+        <p>Press the space bar to shoot.</p>
+    </div>
+    <div  class="contenitore-how-to-play">
+        <h2>4.Points</h2>
+        <p>Hit the asteroids to earn points.</p>
+    </div>
+    <div  class="contenitore-how-to-play">
+        <h2>5.Lives</h2>
+        <p>You can be hit by asteroids up to three times;</br> after that, the game ends.</p>
+    </div>
+    <div  class="contenitore-how-to-play">
+        <h2>6.Asteroid Speed Calculation</h2>
+        <p>The asteroid speed is calculated based on </br> the number of Geomagnetic Storms </br> recorded in the last 30 days.</p>
+    </div>
+    <button id="back-menu-from-how-to-play">Back</button>
+</div>
+
+<!--Sezione Credits del menu, dove vengono citate le risorse esterne che ho usato nel progetto, come ad esempio le immagini e gli audio -->
+<div id="credits-section" class="section">
+    <h1 id="credits-title">Credits </h1>
+        <h2>Sounds & Visual</h2>
+        <p>Music by Maksym Dudchyk from Pixabay</p>
+        <p>Sound Effect by Universfield from Pixabay</p>
+        <p>Sound Effect by Ahmed Abdulaal from Pixabay</p>
+        <p>Sound Effect by u_j8f4w9g47f from Pixabay</p>
+        <p>giphy.com</p>
+        <p>heart-svgrepo-com.svg</p>
+        <p><a href="http://www.freepik.com">Designed by Freepik</a></p>
+    <button id="back-menu-from-credits">Back</button>
+</div>
+<p id="api-error"></p>
+</body>
+</html>
+ 
