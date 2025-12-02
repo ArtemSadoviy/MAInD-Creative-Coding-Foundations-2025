@@ -22,8 +22,8 @@ The application **must** have those requirements:
 
 ## Screenshots 
 
-![first screenshot](/DOC/screenshot_03_1.jpg)
-![second screenshot](/DOC/screenshot_03_2.jpg)
+![first screenshot](/Assignment%2003/DOC/screenshot_03_1.jpg)
+![second screenshot](/Assignment%2003/DOC/screenshot_03_2.jpg)
 
 
 ## Project description 
@@ -32,7 +32,7 @@ In the game, the player’s mission is to hit all the asteroids coming toward th
 
 
 ## Block Diagram 
-![block diagram svg](/DOC/Block_diagram.svg)
+![block diagram svg](/Assignment%2003/DOC/Block_diagram.svg)
 
 
 ## Function List 
@@ -109,7 +109,7 @@ heart-svgrepo-com.svg
 
 ## API Documentation 
 
-![third screenshot](/DOC/screen_shot_03_API.jpeg)
+![third screenshot](/Assignment%2003/DOC/screen_shot_03_API.jpeg)
 
 NASA DONKI - Geomagnetic Storms API 
 The game uses the NASA DONKI Geomagnetic Storms API to collect the number of geomatics storms recorded in the last 30 day.
